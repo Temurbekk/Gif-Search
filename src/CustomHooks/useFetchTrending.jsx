@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-const URL = `http://api.giphy.com/v1/gifs/random?api_key=${process.env.REACT_APP_API_KEY}`;
+const URL = `http://api.giphy.com/v1/gifs/random?api_key=${process.env.REACT_APP_API_KEY}&limit=10&rating=G`;
 const BASE_URL = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=`;
 const URL_EXTENTION = "&limit=15&offset=0&rating=G&lang=en";
 
@@ -14,8 +14,8 @@ const useFetch = ({ search }) => {
     axios
       .get(URL)
       .then((response) => {
-        console.log(response.data.data);
-        setTrendingGifs(response.data.data.image);
+        console.log(response.data.data.images.fixed_height.url);
+        setTrendingGifs(response.data.data.images.fixed_height.url);
         setIsLoading(false);
       })
       .catch((error) => console.log(error));

@@ -3,14 +3,14 @@ import React from "react";
 import GifItem from "./GifItem";
 
 const GifList = ({ gifs }) => {
-  const gifItems = gifs.map((image) => {
-    return <GifItem key={image.id} gif={image} />;
-  });
-  return (
-    <div>
-      <ul>{gifItems}</ul>
+  const gifList = gifs.map((gif, i) => (
+    <div key={i}>
+      <div>
+        <GifItem gif={gif} key={gif.id} />
+      </div>
     </div>
-  );
+  ));
+  return <div>{gifList}</div>;
 };
 
 export default GifList;

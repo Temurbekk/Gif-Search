@@ -2,6 +2,7 @@ import React from "react";
 
 import useFetchTrending from "./CustomHooks/useFetchTrending";
 import SearchBar from "./Components/SearchBar";
+import GifSearch from "./Components/GifSearch";
 
 function App() {
   const { trendingGifs, isLoading } = useFetchTrending("happy");
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <SearchBar onTermChange={handleTermChange} />
+      <GifSearch />
     </>
   );
 }

@@ -16,10 +16,10 @@ const Search = () => {
   };
 
   const serializeGetParams = (input) => {
-    let str = Object.entries(objParam)
+    const str = Object.entries(objParam)
       .map(([key, val]) => `${key}=${val}`)
       .join("&");
-    let finalUrl = url + "&q=" + input + "&" + str;
+    const finalUrl = url + "&q=" + input + "&" + str;
     return finalUrl;
   };
 
@@ -40,18 +40,22 @@ const Search = () => {
 
   return (
     <div>
-      <div className="search-bar">
+      <div className="box columns">
         <input
+          className="input column"
           type="text"
           placeholder="Search Gifs.."
           onChange={(event) => handleChange(event)}
         />
-        <button className="btn btn-primary" onClick={handleClick}>
-          Submit
-        </button>
+        <div
+          className="button is-primary column is-one-quarter"
+          onClick={handleClick}
+        >
+          Search
+        </div>
       </div>
       {giphyData.length > 0 ? (
-        <div className="giphy-container">
+        <div>
           <Suspense fallback={<h1>Loading Giphys</h1>}>
             <GifItem data={giphyData} />
           </Suspense>

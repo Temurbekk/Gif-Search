@@ -2,7 +2,7 @@ import React from "react";
 import Search from "./Components/Search";
 const App = () => {
   return (
-    <div>
+    <div className="container">
       <Search />
     </div>
   );

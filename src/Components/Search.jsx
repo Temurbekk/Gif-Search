@@ -39,7 +39,7 @@ const Search = () => {
   };
   return (
     <div>
-      <div className="box columns">
+      <div className="section columns">
         <input
           className="input column"
           type="text"

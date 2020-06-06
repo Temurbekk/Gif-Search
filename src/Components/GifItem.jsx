@@ -4,10 +4,10 @@ const GifItem = ({ data }) => {
   return (
     <div className="columns">
       <div className="column">
-        {data.map((item) => {
+        {data.map((item, id) => {
           return (
             <>
-              <iframe src={item.embed_url} title={item.id} />
+              <iframe id={id} src={item.embed_url} title={item.id} />
             </>
           );
         })}

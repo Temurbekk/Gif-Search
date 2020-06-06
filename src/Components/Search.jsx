@@ -37,7 +37,6 @@ const Search = () => {
   const handleClick = () => {
     callToGetData(inputValue);
   };
-
   return (
     <div>
       <div className="box columns">
@@ -54,6 +53,7 @@ const Search = () => {
           Search
         </div>
       </div>
+
       {giphyData.length > 0 ? (
         <div>
           <Suspense fallback={<h1>Loading Giphys</h1>}>

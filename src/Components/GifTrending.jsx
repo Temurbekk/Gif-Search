@@ -18,7 +18,7 @@ function GifTrending() {
   }, [url]);
   return (
     <>
-      <div>
+      <div className="section">
         <Suspense fallback={<h1>Loading Giphys</h1>}>
           <GifItem data={trending} />
         </Suspense>

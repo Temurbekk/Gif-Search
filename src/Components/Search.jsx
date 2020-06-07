@@ -1,5 +1,6 @@
 import React, { useState, Suspense } from "react";
 import axios from "axios";
+
 import GifItem from "./GifItem";
 
 const Search = () => {
